@@ -10,7 +10,7 @@ func (s MatchService) FindAll() ([]model.Match, error) {
 	return matches, result.Error
 }
 
-func (s MatchService) FindUserInRoom(username string, roomID uint) (model.Match, error) {
+func (s MatchService) FindUserInRoom(username string, roomID string) (model.Match, error) {
 	var match model.Match
 	result := s.DB.Where(&model.Match{
 		PlayerUsername: username,
